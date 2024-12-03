@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        html,body {
+            margin: 0;
+            background-image: url(carousel1.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+
+        }
+
+        .main_container {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.513);
+            position: relative;
+        }
+
+        .bean {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-image: url(bean.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            z-index: -1;
+        }
+
+        .header {
+            background-color: transparent;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 20%;
+            flex-wrap: wrap;
+            padding-top: 20px;
+            color: #fff;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 90px;
+        }
+
+        .logo p {
+            font-size: 1.6rem;
+            font-family: 'Lora';
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .navbar {
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar a {
+            font-size: 1.1rem;
+            font-family: 'Lora';
+            color: #ffffff;
+            text-decoration: none;
+            outline: none;
+
+        }
+
+        .navbar a:hover {
+            color: #df7f00;
+        }
+
+        .text {
+            text-decoration: underline;
+
+
+        }
+
+
+        #login {
+            background-color: #df7f00;
+            color: black;
+            padding: 6px 20px;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 60px;
+        }
+
+        #login ion-icon {
+            font-size: 13px;
+        }
+
+        #login:hover {
+            background-color: #8c4f00;
+            color: white;
+        }
+
+        .search {
+            position: relative;
+        }
+
+        .search input {
+            border: none;
+            outline: none;
+            width: 115px;
+            padding: 6px 20px;
+            font-size: 0.8rem;
+            border-radius: 15px;
+            text-transform: capitalize;
+
+        }
+
+        .search ion-icon {
+            position: absolute;
+            font-size: 1.2rem;
+            color: rgb(73, 66, 66);
+            right: 10px;
+            top: 4px;
+        }
+
+        .container {
+            display: grid;
+            place-items: center;
+            align-items: start;
+            grid-template-columns: 1fr 1fr;
+            width: 100%;
+        }
+
+        .description {
+            padding: 35px;
+            position: relative;
+        }
+
+        .description i {
+            color: #df7f00;
+            font-style: normal;
+        }
+
+        #enjoy {
+            color: #ffffff;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 4rem;
+            margin-bottom: 0;
+        }
+
+        #text {
+            font-family: 'lora';
+            font-size: 1.2rem;
+            color: #ffffff;
+            font-style: italic;
+
+        }
+
+
+        .form_container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+
+        }
+
+        .form_container form {
+            width: 230px;
+            padding: 10px 27px;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: rgb(0, 0, 0);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #login_text {
+            font-size: 1.7rem;
+            font-weight: bold;
+            margin: 15px;
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            width: 100%;
+        }
+
+        .email_input,
+        .password_input {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            position: relative;
+        }
+
+        #show,#hide{
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            font-size: 1.2rem;
+            color: #4a4a4a;
+            cursor: pointer;
+        }
+
+        #hide{
+            display: none;
+        }
+
+
+
+        .input label {
+            font-size: 0.9rem;
+            position: absolute;
+            left: 8px;
+            top:12px;
+            transition: 0.1s ease-in-out;
+            color: #444444;
+            pointer-events: none;
+            background-color: #fff;
+            padding: 0 4px;
+        }
+
+        .input input {
+            padding: 12px;
+            outline: none;
+            border: 1px solid black;
+            font-size: 0.9rem;
+        }
+
+        .input input:focus {
+            outline: 1px solid #df7f00;
+        }
+
+        .input input:focus~label,
+        .input input:not(:placeholder-shown)~label {
+            font-size: 0.85rem;
+            top: -8px;
+            background-color: #fff;
+        }
+
+        .option_container {
+            text-align: left;
+            width: 100%;
+            padding: 8px 0;
+
+        }
+
+        .option_container a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 0.9rem;
+        }
+
+        .option_container a:hover {
+            text-decoration: underline;
+        }
+
+        #submit {
+            width: 100%;
+            padding: 9px;
+            background-color: #8c4f00;
+            color: white;
+
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        #submit:hover {
+            background-color: #df7f00;
+            color: black;
+        }
+
+        #signup {
+            font-size: 0.9rem;
+        }
+
+        #signup a {
+            color: #000000;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main_container">
+        <div class="bean">
+        </div>
+        <div class="header">
+            <div class="logo">
+                <img src="logo.png">
+                <p>A'espresso Cafe</p>
+            </div>
+            <div class="navbar">
+                <a href="index.html" class="text">Home</a>
+                <a href="index.html ##">About</a>
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                    <ion-icon name="search-outline"></ion-icon>
+                </div>
+                <a href="login.html" id="login">Login<ion-icon name="person-outline"></ion-icon></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="description">
+                <p id="enjoy">Enjoy your <i>coffee</i> <br> before your activity</p>
+                <p id="text">"Coffee always sounds like a brilliant idea"</p>
+            </div>
+            <div class="form_container">
+                <form action="dashboard.html">
+                    <p id="login_text">Login</p>
+                    <div class="input">
+                        <div class="email_input" >
+
+                            <input id="email" type="text" placeholder=" ">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="password_input">
+
+                            <input id="password" type="password" placeholder=" ">
+                            <label for="password">Password</label>
+                            <div>
+                                <ion-icon id='show' onclick='togglePassword()' name="eye-outline"></ion-icon>
+                                <ion-icon id='hide' onclick='togglePassword()' name="eye-off-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="option_container">
+                        <a href="#">Forgot password?</a>
+                        
+                    </div>
+                    <input id="submit" type="submit" value="Login">
+                    <p id="signup">Don't have account? <a href="">Sign up</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById('password');
+            var showIcon = document.getElementById('show');
+            var hideIcon = document.getElementById('hide');
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                showIcon.style.display = "none";
+                hideIcon.style.display = "block";
+            } else {
+                passwordField.type = "password";
+                showIcon.style.display = "block";
+                hideIcon.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A'espresso Cafe</title>
+  <link rel="stylesheet" href="transactions.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</head>
+
+<body>
+  <div class="main_container">
+    <div class="menu_container">
+      <div class="header">
+        <div class="logo">
+          <img src="logo.png">
+          <p>A'espresso Cafe</p>
+        </div>
+        <div class="navbar">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="">Add Product</a>
+          <a href="#"  class="active">Transactions</a>
+          <a href="index.html">Logout</a>
+        </div>
+      </div>
+     
+      <div class="graph">
+        <img src="graph.png" alt="">
+      </div>
+      <div class="search">
+        <button>Download Transaction  <ion-icon name="cloud-download-outline"></ion-icon></button>
+        <input type="text" placeholder="Search Date">
+        <ion-icon id="search_icon" name="search-outline"></ion-icon>
+      </div>
+      <div class="transaction_table">
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+            </tr>
+            <tr>
+                <td>December 1,2024</td>
+                <td>Americano</td>
+                <td>2</td>
+                <td>₱ 300.00</td>
+            </tr>
+            <tr>
+                <td>December 1,2024</td>
+                <td>cappuccino</td>
+                <td>1</td>
+                <td>₱ 75.00</td>
+            </tr>
+            <tr>
+                <td>December 1,2024</td>
+                <td>cappuccino</td>
+                <td>1</td>
+                <td>₱ 75.00</td>
+            </tr>
+            <tr>
+                <td>December 1,2024</td>
+                <td>Americano</td>
+                <td>2</td>
+                <td>₱ 300.00</td>
+            </tr>
+        </table>
+
+      </div>
+    </div>
+    <div class="order_container">
+      <p id="text">customer's order</p>
+      <div class="order_lists">
+        <div id="order" class="order_item">
+          <div class="order">
+            <img src="a.jpg" alt="">
+            <p>Americano</p>
+          </div>
+          <div class="quantity">
+            <ion-icon id="close" name="close-outline"></ion-icon>
+            <p id="order_price">100</p>
+            <div class="quantity_control">
+              <button><ion-icon name="remove-outline"></ion-icon></button>
+              <input type="text" value="1">
+              <button><ion-icon name="add-outline"></ion-icon></button>
+            </div>
+          </div>
+        </div> 
+        <div id="order" class="order_item">
+          <div class="order">
+            <img src="c1.jpg" alt="">
+            <p>Classic Coffee</p>
+          </div>
+          <div class="quantity">
+            <ion-icon id="close" name="close-outline"></ion-icon>
+            <p id="order_price">100</p>
+            <div class="quantity_control">
+              <button><ion-icon name="remove-outline"></ion-icon></button>
+              <input type="text" value="1">
+              <button><ion-icon name="add-outline"></ion-icon></button>
+            </div>
+          </div>
+        </div> 
+        <div id="order" class="order_item">
+          <div class="order">
+            <img src="c12.jpg" alt="">
+            <p>Coffee chocolate mousse</p>
+          </div>
+          <div class="quantity">
+            <ion-icon id="close" name="close-outline"></ion-icon>
+            <p id="order_price">100</p>
+            <div class="quantity_control">
+              <button><ion-icon name="remove-outline"></ion-icon></button>
+              <input type="text" value="1">
+              <button><ion-icon name="add-outline"></ion-icon></button>
+            </div>
+          </div>
+        </div> 
+        <div id="order" class="order_item">
+          <div class="order">
+            <img src="c8.jpg" alt="">
+            <p>Cafe chorrus</p>
+          </div>
+          <div class="quantity">
+            <ion-icon id="close" name="close-outline"></ion-icon>
+            <p id="order_price">100</p>
+            <div class="quantity_control">
+              <button><ion-icon name="remove-outline"></ion-icon></button>
+              <input type="text" value="1">
+              <button><ion-icon name="add-outline"></ion-icon></button>
+            </div>
+          </div>
+        </div> 
+        <div id="order" class="order_item">
+          <div class="order">
+            <img src="c11.jpg" alt="">
+            <p>Milk Caramel</p>
+          </div>
+          <div class="quantity">
+            <ion-icon id="close" name="close-outline"></ion-icon>
+            <p id="order_price">100</p>
+            <div class="quantity_control">
+              <button><ion-icon name="remove-outline"></ion-icon></button>
+              <input type="text" value="1">
+              <button><ion-icon name="add-outline"></ion-icon></button>
+            </div>
+          </div>
+        </div> 
+        <div id="order" class="order_item">
+          <div class="order">
+            <img src="c6.jpg" alt="">
+            <p>Whipped coffee</p>
+          </div>
+          <div class="quantity">
+            <ion-icon id="close" name="close-outline"></ion-icon>
+            <p id="order_price">100</p>
+            <div class="quantity_control">
+              <button><ion-icon name="remove-outline"></ion-icon></button>
+              <input type="text" value="1">
+              <button><ion-icon name="add-outline"></ion-icon></button>
+            </div>
+          </div>
+        </div> 
+        <div id="order" class="order_item">
+          <div class="order">
+            <img src="c5.jpg" alt="">
+            <p>Americano</p>
+          </div>
+          <div class="quantity">
+            <ion-icon id="close" name="close-outline"></ion-icon>
+            <p id="order_price">100</p>
+            <div class="quantity_control">
+              <button><ion-icon name="remove-outline"></ion-icon></button>
+              <input type="text" value="1">
+              <button><ion-icon name="add-outline"></ion-icon></button>
+            </div>
+          </div>
+        </div> 
+        
+      </div>
+      <div class="total_price">
+        <div class="total">
+          <p>Total Price :</p>
+          <p id="order_price">1000</p>
+        </div>
+        <button onclick="order()">Place Order</button>
+      </div>
+
+    </div>
+  </div>
+  <script>
+    function order(){
+      alert('Order Placed.');
+    }
+  </script>
+</body>
+
+</html>
